@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>选项卡 在线演示 ThinkCSS</title>
+<style type="text/css">
+*{margin:0;padding:0;list-style-type:none;}
+a,img{border:0;}
+body{font:12px/180% Arial, Helvetica, sans-serif, "新宋体";}
+#n{margin:10px auto; width:920px; border:1px solid #CCC;font-size:12px; line-height:30px;}
+#n a{ padding:0 4px; color:#333}
+
+
+.besh-resim{width:570px;height:175px;overflow:hidden;margin:40px auto 0 auto;}
+.resim-isimler{float:left;width:170px;height:100%;margin:0;padding:0;}
+.resim-isim{position:relative;height:35px;line-height:35px;list-style:none;background-color:#9B59B6;}
+.reng{display:block;position:absolute;top:0;left:0;width:3px;height:35px;overflow:hidden;line-height:0;font-size:0;z-index:1}
+.reng1{display:block;width:100%;overflow:hidden;background-color:#E74C3C;}
+.reng2{background-color:#E67E22;}
+.reng3{background-color:#F1C40F;}
+.reng4{background-color:#2ECC71;}
+.reng5{background-color:#3498DB;}
+.isim{display:block;position:relative;height:100%;z-index:2;padding-left:30px;line-height:35px;text-decoration:none;color:#fff;font-weight:bold;}
+.resimler{float:right;position:relative;width:400px;height:100%;background:#4e6d8d;}
+.resim-ulinish{display:none;position:absolute;top:0;left:0;width:100%;height:100%;overflow:hidden;z-index:1;text-decoration:none;}
+.resim-ulinish:first-child{display:inline;}
+.yuklesh{display:block;position:relative;top:70px;width:70%;z-index:1;margin:0 auto;text-align:center;line-height:20px;font-weight:bold;color:#ccc;}
+.resim{display:block;position:absolute;top:0;left:0;width:100%;height:100%;z-index:2}
+</style>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript">
+$(function(){
+	$(".resim-isim").mouseover(function(){
+		$(this).find(".reng").stop(false,false).animate({width: '100%'}, 300);
+		$(this).siblings().find(".reng").stop(false,false).animate({width: '4px'}, 300);
+		var i=$(".resim-isim").index(this);
+		$(".resim-ulinish").eq(i).stop(false,true).fadeIn(300)
+		$(".resim-ulinish").eq(i).siblings().stop(false,true).fadeOut(300)
+	})
+}) 
+</script>
+</head>
+<body>
+
+<div class="besh-resim">
+
+	<ul class="resim-isimler">
+		<li class="resim-isim"><span class="reng  reng1"></span><a class="isim" href="javascript:">湘北全家福</a></li>
+		<li class="resim-isim"><span class="reng  reng2"></span><a class="isim" href="javascript:">樱木花道</a></li>
+		<li class="resim-isim"><span class="reng  reng3"></span><a class="isim" href="javascript:">三井寿</a></li>
+		<li class="resim-isim"><span class="reng  reng4"></span><a class="isim" href="javascript:">流川枫</a></li>
+		<li class="resim-isim"><span class="reng  reng5"></span><a class="isim" href="javascript:">先发五虎</a></li>
+	</ul>
+	
+	<div class="resimler">
+		<a class="resim-ulinish" href="images/1.jpg" ><span class="yuklesh">正在加载...</span><img class="resim" src="images/1.jpg" title=""></a>
+		<a class="resim-ulinish" href="images/2.jpg" ><span class="yuklesh">正在加载...</span><img class="resim" src="images/2.jpg" title=""></a>
+		<a class="resim-ulinish" href="images/3.jpg" ><span class="yuklesh">正在加载...</span><img class="resim" src="images/3.jpg" title=""></a>
+		<a class="resim-ulinish" href="images/4.jpg" ><span class="yuklesh">正在加载...</span><img class="resim" src="images/4.jpg" title=""></a>
+		<a class="resim-ulinish" href="images/5.jpg" ><span class="yuklesh">正在加载...</span><img class="resim" src="images/5.jpg" title=""></a>
+	</div>
+	
+</div>
+
+</body>
+</html>
